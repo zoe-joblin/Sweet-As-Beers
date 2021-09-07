@@ -9,9 +9,9 @@ export const addToCart = (id, name) => {
   }
 }
 
-export const navigate = (activePage) => {
+export const navigate = (page) => {
   return {
     type: 'NAVIGATE',
-    activePage: activePage
+    activePage: page
   }
 }

@@ -7,7 +7,8 @@ import Cart from './Cart'
 
 import beerData from '../../data/beers'
 
-function App ({ activePage }) {
+function App (props) {
+  const { activePage } = props
   return (
     <div className='app'>
       <Header />
