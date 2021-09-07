@@ -1,8 +1,6 @@
 import { NAVIGATE } from '../actions'
 
-const initialState = []
-
-const activePageReducer = (state = initialState, action) => {
+const activePageReducer = (state = 'listing', action) => {
   switch (action.type) {
     case NAVIGATE:
       return [...state, { activePage: action.activePage }]

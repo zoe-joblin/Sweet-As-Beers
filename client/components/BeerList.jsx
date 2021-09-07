@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 import BeerListItem from './BeerListItem'
 
@@ -15,4 +16,4 @@ function BeerList (props) {
   )
 }
 
-export default BeerList
+export default connect()(BeerList)

@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 function Cart (props) {
   return (
@@ -12,7 +13,7 @@ function Cart (props) {
           </tr>
         </thead>
         <tbody>
-          {props.cart.map(({ id, name, quantity }) => {
+          {props.cart?.map(({ id, name, quantity }) => {
             return (
               <tr key={id}>
                 <td>{name}</td>
@@ -34,4 +35,4 @@ function Cart (props) {
   )
 }
 
-export default Cart
+export default connect()(Cart)
