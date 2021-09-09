@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 function Cart (props) {
+  const { cart } = props
+  console.log(cart)
   return (
     <div className='cart'>
       <table>
@@ -13,7 +15,7 @@ function Cart (props) {
           </tr>
         </thead>
         <tbody>
-          {props.cart?.map(({ id, name, quantity }) => {
+          {cart?.map(({ id, name, quantity }) => {
             return (
               <tr key={id}>
                 <td>{name}</td>
@@ -35,4 +37,9 @@ function Cart (props) {
   )
 }
 
-export default connect()(Cart)
+const mapStateToProps = (globalState) => {
+  return {
+    cart: globalState.cart
+  }
+}
+export default connect(mapStateToProps)(Cart)

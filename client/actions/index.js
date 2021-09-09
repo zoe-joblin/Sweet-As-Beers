@@ -4,14 +4,17 @@ export const NAVIGATE = 'NAVIGATE'
 export const addToCart = (id, name) => {
   return {
     type: 'ADD_TO_CART',
-    id: id,
-    name: name
+    cart: {
+      id: id,
+      name: name,
+      quanity: 1
+    }
   }
 }
 
 export const navigate = (page) => {
   return {
     type: 'NAVIGATE',
-    activePage: page
+    page
   }
 }

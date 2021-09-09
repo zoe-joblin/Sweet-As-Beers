@@ -7,8 +7,7 @@ import Cart from './Cart'
 
 import beerData from '../../data/beers'
 
-function App (props) {
-  const { activePage } = props
+function App ({ activePage }) {
   return (
     <div className='app'>
       <Header />
@@ -19,7 +18,7 @@ function App (props) {
 
 const mapStateToProps = (globalState) => {
   return {
-    activePage: globalState.activePage
+    activePage: globalState.page
   }
 }
 export default connect(mapStateToProps)(App)
