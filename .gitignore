@@ -1,2 +1,4 @@
+dev.sqlite3
 node_modules
 bundle*
+node_modules

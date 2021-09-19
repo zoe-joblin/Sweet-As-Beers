@@ -8,7 +8,7 @@
     "client": "npm run webpack -- --watch",
     "server": "nodemon server",
     "start": "node server",
-    "test": "jest --watchAll",
+    "knex": "knex --knexfile ./server/knexfile.js",
     "lint": "eslint --ext .js,.jsx .",
     "webpack": "webpack --config ./client/webpack.config.js"
   },
