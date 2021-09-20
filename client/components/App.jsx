@@ -7,7 +7,7 @@ import Cart from './Cart'
 
 import { fetchBeersThunk } from '../actions/index'
 
-function App ({ activePage }) {
+function App ({ activePage, dispatch }) {
 
   useEffect(() => {
     dispatch(fetchBeersThunk())
@@ -18,7 +18,7 @@ function App ({ activePage }) {
     <div className='app'>
       <Header />
 
-      { activePage === 'listing' ? < BeerList beers={beerData.beers} /> : < Cart /> }
+      { activePage === 'listing' ? < BeerList /> : < Cart /> }
     </div>
   )
 }

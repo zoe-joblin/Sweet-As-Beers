@@ -36,6 +36,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "knex": "^0.95.11",
+    "redux-thunk": "^2.3.0",
     "sqlite3": "^4.2.0",
     "superagent": "^6.1.0"
   },

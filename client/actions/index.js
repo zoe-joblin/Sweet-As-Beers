@@ -33,7 +33,7 @@ export const navigate = (page) => {
 export function fetchBeersThunk () {
   return (dispatch) => {
     getBeers()
-      .then(beers => {
+      .then((beers) => {
         dispatch(saveAllBeers(beers))
       })
   }

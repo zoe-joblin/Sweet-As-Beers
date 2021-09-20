@@ -15,7 +15,7 @@ function Cart (props) {
           </tr>
         </thead>
         <tbody>
-          {cart?.map(({ id, name, quantity }) => {
+          {cart.map(({ id, name, quantity }) => {
             return (
               <tr key={id}>
                 <td>{name}</td>
