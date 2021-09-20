@@ -10,7 +10,7 @@ import { fetchBeersThunk } from '../actions/index'
 function App ({ activePage }) {
 
   useEffect(() => {
-    dispatch(fetchBeersThunk)
+    dispatch(fetchBeersThunk())
   }, [])
 
 
