@@ -1,16 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 
 import Header from './Header'
 import BeerList from './BeerList'
 import Cart from './Cart'
 
-import beerData from '../../data/beers'
+import { fetchBeersThunk } from '../actions/index'
 
 function App ({ activePage }) {
+
+  useEffect(() => {
+    dispatch(fetchBeersThunk)
+  }, [])
+
+
   return (
     <div className='app'>
       <Header />
+
       { activePage === 'listing' ? < BeerList beers={beerData.beers} /> : < Cart /> }
     </div>
   )
