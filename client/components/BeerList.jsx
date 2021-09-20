@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import BeerListItem from './BeerListItem'
+import RequestBeer from './RequestBeer'
 
 function BeerList (props) {
  const { beers } = props
@@ -14,6 +15,7 @@ function BeerList (props) {
           <BeerListItem key={beer.id} beer={beer} />
         )
       })}
+      < RequestBeer />
     </div>
   )
 }
