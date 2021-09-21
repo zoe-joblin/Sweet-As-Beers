@@ -17,7 +17,7 @@ export const addToCart = (id, name) => {
     cart: {
       id: id,
       name: name,
-      quanity: 1
+      quantity: 1
     }
   }
 }

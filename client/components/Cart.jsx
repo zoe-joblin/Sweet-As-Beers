@@ -4,10 +4,12 @@ import { navigate } from '../actions/index'
 
 function Cart (props) {
   const { cart, dispatch } = props
-  console.log(cart)
 
   const clickHandler = () => {
     dispatch(navigate('listing'))
+  }
+  const changeHandler = () => {
+   setQuantity(cart.quanity)
   }
 
   return (
@@ -25,7 +27,9 @@ function Cart (props) {
             return (
               <tr key={id}>
                 <td>{name}</td>
-                <td><input className='update-input' value={quantity} /></td>
+                <td>{quantity}
+                  {/* <input onChange={changeHandler} className='update-input' value= /> */}
+                  </td>
                 {/* TODO: implement deletes */}
                 <td><button><span className='fa fa-trash fa-2x' /></button></td>
               </tr>
