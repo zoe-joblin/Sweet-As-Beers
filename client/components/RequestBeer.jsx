@@ -10,6 +10,7 @@ function RequestBeer ({ dispatch }) {
       name: newBeerName, 
       brewery: newBeerBrewery, 
       country: newBeerCountry,
+      style: newBeerStyle,
       abv: newBeerAbv,
     }))
   }
@@ -17,6 +18,7 @@ function RequestBeer ({ dispatch }) {
   const [newBeerName, setName] = useState('')
   const [newBeerBrewery, setBrewery] = useState('')
   const [newBeerCountry, setCountry] = useState('')
+  const [newBeerStyle, setStyle] = useState('')
   const [newBeerAbv, setAbv] = useState('')
 
   const handleNameChange = (e) => {
@@ -27,6 +29,9 @@ function RequestBeer ({ dispatch }) {
   }
   const handleCountryChange = (e) => {
     setCountry( e.target.value )
+  }
+  const handleStyleChange = (e) => {
+    setStyle( e.target.value )
   }
   const handleAbvChange = (e) => {
     setAbv( e.target.value )
@@ -61,7 +66,15 @@ function RequestBeer ({ dispatch }) {
         value={newBeerCountry}
         onChange={handleCountryChange}
       />
-      <label>ABV </label>
+      <label>Style </label>
+      <input
+        type="text"
+        id="newStyle"
+        name="style"
+        value={newBeerStyle}
+        onChange={handleStyleChange}
+      />
+       <label>ABV </label>
       <input
         type="text"
         id="newAbv"
