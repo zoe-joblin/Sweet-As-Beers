@@ -5,7 +5,7 @@ function getAllBeers (db = connection) {
     .select()
 }
 
-function getBeerById(id) {
+function getBeerById(id, db = connection) {
 return db('beers')
   .where('id', id)
   .first()
@@ -14,9 +14,9 @@ return db('beers')
 function addNewBeer (beer, db = connection) {
   return db('beers')
     .insert(beer)
-//     .then(beerId => {
-//       return getBeerById(beerId[0])
-// })
+    .then(beerId => {
+      return getBeerById(beerId[0])
+})
 }
 
 module.exports = {
