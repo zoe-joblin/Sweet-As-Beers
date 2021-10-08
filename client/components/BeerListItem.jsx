@@ -1,7 +1,17 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { addToCart, navigate } from '../actions/index'
 
-function BeerListItem (props) {
-  const { name, brewery, country, abv } = props.beer
+function BeerListItem ({ beer, dispatch }) {
+  const { name, brewery, country, abv, id } = beer
+
+// console.log(beers)
+
+  const addClickHandler = () => {
+    dispatch(addToCart(id, name))
+    dispatch(navigate('cart'))
+  }
+
   return (
     <div className='beer'>
       <p className='name'>{name}</p>
@@ -9,10 +19,16 @@ function BeerListItem (props) {
       <p>
         <span className='country'>{country}</span>
         <span className='abv'>{abv} abv</span>
-        <a href='#' className='cart-link'>Add to cart</a>
+        <a onClick={addClickHandler} className='cart-link'>Add to cart</a>
       </p>
     </div>
   )
 }
 
-export default BeerListItem
+// function mapStateToProps (globalState) {
+//   return {
+//     beers: globalState.beers
+//   }
+// }
+
+export default connect()(BeerListItem)

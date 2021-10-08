@@ -1,17 +1,31 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
 
 import Header from './Header'
 import BeerList from './BeerList'
+import Cart from './Cart'
 
-import beerData from '../../data/beers'
+import { fetchBeersThunk } from '../actions/index'
 
-function App () {
+function App ({ activePage, dispatch }) {
+
+  useEffect(() => {
+    dispatch(fetchBeersThunk())
+  }, [])
+
+
   return (
     <div className='app'>
       <Header />
-      <BeerList beers={beerData.beers} />
+
+      { activePage === 'listing' ? < BeerList /> : < Cart /> }
     </div>
   )
 }
 
-export default App
+const mapStateToProps = (globalState) => {
+  return {
+    activePage: globalState.page
+  }
+}
+export default connect(mapStateToProps)(App)
